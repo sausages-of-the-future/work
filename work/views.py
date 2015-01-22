@@ -5,9 +5,8 @@ import requests
 import jinja2
 from flask_oauthlib.client import OAuth
 from twilio.rest import TwilioRestClient
-import start_organisation.forms as forms
-from start_organisation.order import Order
-from start_organisation import app, oauth
+import work.forms as forms
+from work import app, oauth
 from decorators import registry_oauth_required
 import dateutil.parser
 from flask import (
@@ -68,9 +67,9 @@ def index():
 
 @app.route("/job-seeker")
 @registry_oauth_required
-def job_seeker_account(organisation_id):
+def job_seeker_account():
 
-    return render_template("job-seeker.html", organisation=organisation, service=service, organisation_id=organisation_id, selected_tab='overview')
+    return render_template("job-seeker.html", service=service, selected_tab='overview')
 
 @app.route('/verify')
 def verify():

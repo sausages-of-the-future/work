@@ -1,40 +1,51 @@
 {% extends "base_service.html" %}
-{% block title %}{{organisation.name}}{% endblock%}
-{% block service_title %} Manage - {{organisation.name}}{% endblock%}
+{% block title %}{% endblock%}
+{% block service_title %}Find work{% endblock%}
 {% block service_content %}
   <div class="row">
     <div class="small-12 columns">
-      <h2>{{organisation.name}}</h2>
     </div>
   </div>
   <div class="row">
     <div class="small-12 columns">
       
       {% include "_tabs.html" %}
-
-      <p>
-        {{organisation.activities}}
-      </p>
-
-      <hr/>
-
-      <h3>Directors and officers <a href="#" class="button tiny right secondary">Amend</a></h3>
-      <ul>
-          {% for director in organisation.directors %}
-          <li>{{ director }} &mdash; Director</li>
-        {% endfor %}
-      </ul>
-
-      <hr/>
-
-      <h3>Registered address <a href="#" class="right button tiny secondary">Amend</a></h3>
-      <p>
-        {% if organisation.full_address %}
-          <a href="#">{{ organisation.full_address }}</a>
-        {% else %}
-          <a href="#">Transworld House, 100 City Road, London, EC1Y 2BP</a>
-        {% endif %}
-      </p>
+      <div>
+        <div class="panel card">
+            <i class="fa fa-calendar fa-4"></i>
+            <p>
+                Next appointment: 9:15 Friday 20 February
+            </p>
+        </div>
+        <div class="panel card">
+            <i class="fa fa-money fa-4"></i>
+            <p>
+                Next payment: Monday 23 February
+            </p>
+        </div>
+        <div class="panel card">
+            <i class="fa fa-line-chart fa-4"></i>
+            <p>
+                Progress: 3 interviews in the last 2 weeks
+            </p>
+        </div>
+    
+        <hr/>
+        <h3>Your work coach</h3>
+        <div class="person">
+            <div class="photo">
+                <img src="{{url_for('static', filename='images/agent.jpg')}}"/>
+            </div>
+            <p>James Webb</p>
+            <p><a href="">GOV.UK Local centre,  12 High Street Borchester</a>
+            <span class="success radius label">Open</span></p>
+        </div>
+        <p>
+            <a href="#" class="button tiny">Chat online</a>
+            <a href="#" class="button tiny">Book appointment</a>
+        </p>
+        
+      </div>
     </div>
   </div>
 {% endblock %}
