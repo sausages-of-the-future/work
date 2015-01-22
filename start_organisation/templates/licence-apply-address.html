@@ -1,0 +1,14 @@
+{% extends "base_transaction.html" %}
+{% block title %}Types of organisation{% endblock %}
+{% block transaction_content %}
+  <div class="row">
+    <div class="small-12 columns">
+      <p>What address do you require the licences for?</p>
+      <form action="" method="post">
+        {{ form.licence_address }}
+        {{ form.csrf_token }}
+        <button class="button expand" type="submit">Next</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+export SETTINGS='config.DevelopmentConfig'
+export APP_ROOT='.'
+export SECRET_KEY='local-dev-not-secret'
+export SECURITY_PASSWORD_HASH='bcrypt'
+export REGISTRY_BASE_URL='http://registry.gov.local'
+export BASE_URL='http://organisations.gov.local'
+export WWW_BASE_URL='http://www.gov.local'
+export LOCALGOV_BASE_URL='http://localgov.gov.local'

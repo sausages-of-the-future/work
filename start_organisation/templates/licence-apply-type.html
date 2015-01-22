@@ -1,0 +1,22 @@
+{% extends "base_transaction.html" %}
+{% block title %}Types of organisation{% endblock %}
+{% block header_title %}<a href="/">Apply for licences</a>{% endblock %}
+{% block transaction_content %}
+  <div class="row">
+    <div class="small-12 columns">
+      <p>
+        Based on the business activities of <strong>{{organisation.name}}</strong>, you may want to apply for the following licences:
+      </p>
+      <form action="" method ="post">
+        <ul>
+          <li>{{ render_checkbox(form.use_cctv) }}</li>
+          <li>{{ render_checkbox(form.discharge_effluent) }}</li>
+          <li>{{ render_checkbox(form.tables_chairs_on_pavement) }}</li>
+          <li>{{ render_checkbox(form.sell_alcohol) }}</li>
+        </ul>
+          {{ form.csrf_token }}
+          <button class="expand button" type="submit">Next</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
